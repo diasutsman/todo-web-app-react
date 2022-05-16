@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+:root {
+    --text : #333;
+    --text-light : #777;
+
+    --white-hover : rgba(255, 255, 255, .5);
+    --light-hover : rgba(0, 0, 0, 0.025);
+    --box-shadow-light : 0 0 1px rgba(0,0,0,.1);
+    --box-shadow : 0 0 1px var(--text-light);
+
+    --waiting-bg : rgba(255, 0, 0, 0.05);
+    --waiting-text-bg : rgba(255, 0, 0, 0.2);
+    --waiting-text : rgba(150, 0, 0, .75);
+
+    --on-progress-bg : rgba(255, 255, 0, 0.075);
+    --on-progress-text-bg : rgba(255, 255, 0, 0.2);
+    --on-progress-text : rgba(150, 150, 0, .75);
+
+    --finished-bg : rgba(0, 255, 0, 0.05);
+    --finished-text-bg : rgba(0, 255, 0, 0.2);
+    --finished-text : rgba(0, 150, 0, .75);
+}
+
+::selection {
+    background: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    line-height: 1.2;
+    transition: .25s;
+
+}
+
+.todo {
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+}
+
+input {
+    all: unset;
+    width: 100%;
+}
+
+button {
+    all: unset;
+    font-size: 1rem;
+}
+
+.page-title {
+    margin: 1rem 0 0 0;
+    padding: .5rem 0;
+    font-size: 1.75rem;
+    color: var(--text);
+}
+
+.page-desc {
+    margin: 0 0 2rem 0;
+    color: var(--text-light);
+    letter-spacing: .5px;
+}
+
+.todo-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    color: var(--text);
+    gap: .5rem;
+    width: 75%;
+    max-width: 1200px;
+    min-width: 800px;
+}
+
+.todo-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: .5rem;
+    font-size: .8rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    flex: 1;
+}
+.waiting {
+    background-color: var(--waiting-bg);
+    
+}
+.on-progress {
+    background-color: var(--on-progress-bg);
+    
+}
+.finished {
+    background-color: var(--finished-bg);
+
+}
+
+.category {
+    margin: 0 0 .75rem 0;
+    padding: .3rem .75rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+    box-shadow: var(--box-shadow-light);
+}
+.category-waiting {
+    background-color: var(--waiting-text-bg);
+}
+.category-on-progress {
+    background-color: var(--on-progress-text-bg);
+}
+.category-finished {
+    background-color: var(--finished-text-bg);
+}
+
+.todo-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 100%;
+    min-height: 41.5px;
+    padding: .75rem 1rem;
+    box-shadow: var(--box-shadow-light);
+    border-radius: .25rem;
+    margin-bottom: .5rem;
+    cursor: grab;
+    position: relative;
+}
+.todo-item:hover {
+    background-color: var(--white-hover);
+}
+.todo-title {
+    font-size: 1rem;
+}
+.todo-item .menu-todo {
+    color: var(--text-light);
+    cursor: pointer;
+    position: absolute;
+    right: .45rem;
+    top: .45rem;
+    display: none;
+    transition: 1s;
+    padding: .25rem .30rem;
+    border: .1px solid var(--text-light);
+    border-radius: .25rem;
+}
+.todo-item .menu-todo:hover {
+    background-color: var(--light-hover);
+}
+.todo-item:hover .menu-todo {
+    display: block;
+}
+
+.menu {
+    position: absolute;
+    right: .45rem;
+    top: .45rem;
+    border: .1px solid var(--text-light);
+    width: 10rem;
+    font-size: 1rem;
+    display: none; /* Flex */
+    flex-direction: column;
+    border-radius: .25rem;
+    background-color: white;
+    z-index: 100;
+    cursor: pointer;
+}
+.menu > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: .4rem .5rem;
+    margin: .1rem 0;
+}
+.menu > div:hover {
+    background-color: var(--light-hover);
+}
+.menu-edit *,
+.menu-delete *,
+.menu-move * {
+    z-index: -10;
+}
+.menu-move:hover > div {
+    display: flex;
+}
+.move {
+    background-color: white;
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    right: -6rem;
+    top: 2.3rem;
+    font-size: .9rem;
+    border-radius: .25rem;
+    border: .1px solid var(--text-light);
+}
+.move > span {
+    padding: .4rem .6rem;
+    margin: .1rem 0;
+}
+.move > span:hover {
+    background-color: var(--light-hover);
+}
+
+.add-todo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: .5rem;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.add-todo * {
+    z-index: -10;
+}
+.add-todo:hover {
+    background-color: var(--light-hover);
+}
+.waiting .add-todo {
+    color: var(--waiting-text);
+}
+.on-progress .add-todo {
+    color: var(--on-progress-text);
+}
+.finished .add-todo {
+    color: var(--finished-text);
+}
+.material-icons {
+    font-size: 1.2rem;
+}
+
+.dragging {
+    border: .1px dashed var(--text-light);
+}
+
+.dragover {
+    border: .1px dashed var(--text-light);
+}
+
+.trash  {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .5rem;
+    max-width: 8rem;
+    text-align: center;
+    margin-left: .5rem;
+    padding: 2rem 2rem 2.5rem 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    position: relative;
+}
+.trash:hover {
+    background-color: var(--light-hover);
+}
+.trash .material-icons {
+    font-size: 2rem;
+}
+.trash::before {
+    content: 'Drag item here';
+    position: absolute;
+    bottom: -.75rem;
+    padding: .5rem;
+    font-size: .75rem;
+    border-radius: .75rem;
+    box-shadow: var(--box-shadow);
+    background-color: white;
+}
