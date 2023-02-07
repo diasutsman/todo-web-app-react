@@ -1,5 +1,5 @@
 import Todo from "data/todo";
-import React, { useState } from "react";
+import React from "react";
 
 class TodoItem extends React.Component {
 
