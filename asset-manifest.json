@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/diasutsman.github.io/weather-web-react/static/css/main.afd1f4a2.css",
-    "main.js": "/diasutsman.github.io/weather-web-react/static/js/main.1ba4eb94.js",
-    "static/js/787.962924a7.chunk.js": "/diasutsman.github.io/weather-web-react/static/js/787.962924a7.chunk.js",
-    "index.html": "/diasutsman.github.io/weather-web-react/index.html",
-    "main.afd1f4a2.css.map": "/diasutsman.github.io/weather-web-react/static/css/main.afd1f4a2.css.map",
-    "main.1ba4eb94.js.map": "/diasutsman.github.io/weather-web-react/static/js/main.1ba4eb94.js.map",
-    "787.962924a7.chunk.js.map": "/diasutsman.github.io/weather-web-react/static/js/787.962924a7.chunk.js.map"
+    "main.css": "/weather-web-react/static/css/main.afd1f4a2.css",
+    "main.js": "/weather-web-react/static/js/main.a383427d.js",
+    "static/js/787.962924a7.chunk.js": "/weather-web-react/static/js/787.962924a7.chunk.js",
+    "index.html": "/weather-web-react/index.html",
+    "main.afd1f4a2.css.map": "/weather-web-react/static/css/main.afd1f4a2.css.map",
+    "main.a383427d.js.map": "/weather-web-react/static/js/main.a383427d.js.map",
+    "787.962924a7.chunk.js.map": "/weather-web-react/static/js/787.962924a7.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.afd1f4a2.css",
-    "static/js/main.1ba4eb94.js"
+    "static/js/main.a383427d.js"
   ]
 }
